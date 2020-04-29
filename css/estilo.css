@@ -1,0 +1,395 @@
+/* Inicio del trabajo*/
+
+*{
+	scroll-behavior: smooth;
+}
+html{
+	margin: 0 auto
+	padding:0px;
+}
+
+.bloque{	
+	background:#43398f;
+	margin: 10px;
+	border:5px solid #f7105a;		
+}
+
+	/*#1521b4*/
+}
+.Logotipo img{
+	margin-top: 5px;
+	margin-left:5px;
+}
+
+header{
+	height: 100vh;
+	margin:10px;
+	border:5px solid #F7105A;
+	background-image: url("../Imagen/salsa_fondo.png");
+	background-repeat:no-repeat;
+	background-position: top;
+	background-size:cover;
+}
+header nav{
+	position: fixed; 
+	bottom:0;
+}
+
+h1{
+	color:#F7105A;
+	font-family: 'dancing script', cursive;
+	font-size: 40px;
+	padding: 10px;
+	font-weight: bold;
+}	
+.videos h2{
+	text-align:center;
+}
+
+
+h2{
+	color: white;
+	font-family: 'Dancing Script', cursive;
+	font-size: 35px;
+	padding: 10px;
+	font-weight: bold;
+}
+
+
+h2{
+	display: block;
+	margin-block-start:0.83em;
+	margin-block-end:0.83em;
+	margin-inline-start:0px;
+	margin-inline-end:0px;
+}
+
+h3{	color: #fff;
+	font-family: 'Dancing Script', cursive;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 10px
+	
+}
+
+table{
+		color:white;
+}
+/* menu */
+
+#menu ul {
+ list-style:none;
+ margin:0;
+ padding:0;
+}
+
+/* items del menu */
+
+#menu ul li {
+ background-color:#F7105A;
+}
+
+/* enlaces del menu */
+
+#menu ul a {
+ display:block;
+ color:#fff;
+ text-decoration:none;
+ font-weight:400;
+ font-size:15px;
+ padding:10px;
+ text-transform:uppercase;
+ letter-spacing:1px;
+}
+
+
+/* items del menu */
+
+#menu ul li {
+ position:relative;
+ float:left;
+ margin:0;
+ padding:0;
+}
+
+/* efecto al pasar el ratón por los items del menu */
+
+#menu ul li:hover {
+ background:#5b78a7;
+}
+
+/* menu desplegable */
+
+#menu ul ul {
+ display:none;
+ position:absolute;
+ bottom:100%;
+ left:0;
+ background:#eee;
+ padding:0;
+}
+/* items del menu desplegable */
+
+#menu ul ul li {
+ float:none;
+ width:150px
+}
+
+/* enlaces de los items del menu desplegable */
+
+#menu ul ul a {
+ line-height:120%;
+ padding:10px 15px;
+}
+
+/* items del menu desplegable al pasar el ratón */
+
+#menu ul li:hover > ul {
+ display:block;
+}
+
+
+
+
+p{
+	color:white;
+	font-size: 20px;
+	padding: 10px;
+	marging:10px;
+		
+}
+
+
+ul {
+	color:white;
+	list-style-type: square;
+	font-size: 20px;
+	margin:50px;
+}
+
+video{
+	width:400px;
+	margin: 10px 10px 0 0;
+	
+}
+
+#padre{
+	/*background:#F7105A; */
+  	display: flex;  	  	
+}
+/*Gradientes del tono gris*/
+#padre .hijo1{
+	/*background:linear-gradient(#e8e3e3,#9a9999);*/
+	width: 50%;	
+	border: 1px solid #f7105a;
+	margin-right: 5px;
+}
+#padre .hijo2{
+	/*background:radial-gradient(#e8e3e3,#9a9999);*/
+	width: 50%;	
+	border: 1px solid #f7105a;
+}
+
+
+.subinicio{
+	display:flex;	 
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom:25px;	
+}
+
+.imagenes div img{
+	width: 100%;
+	height:auto;
+	object-fit: cover;
+ }
+
+.imagenes{
+	display:grid;	
+	grid-template-columns: repeat(4,1fr);
+	grid-template-rows: repeat(6, auto);
+	grid-column-gap: 15px;
+	grid-row-gap: 10px;	
+}
+
+.imagen3{
+	grid-column: 1 / span 2; 
+	grid-row: 1/span 2;
+
+}
+
+.imagen7{
+	grid-column: 3 / span 2; 
+	grid-row: 3/span 2;
+
+}
+
+.imagen15{
+	grid-column: 1 / span 2; 
+	grid-row: 5/span 2;
+}
+
+.tabla1 span{
+	width: 100%;
+	height:auto;
+	object-fit: cover;	
+ }
+.tabla1 span{
+	font-size: 20px;
+	color:white;
+}
+
+.tabla1{
+	display:grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-template-rows: repeat(auto,1fr);
+	grid-column-gap: 5px;
+	grid-row-gap: 5px; 
+	
+}
+
+.dif1{
+	grid-column: 1 / span 1; 
+	grid-row: 1/span 2;
+	background: black;
+	text-align: center;	
+}
+
+.dif2{
+	grid-column: 2 / span 3; 
+	grid-row: 1 / span 1;
+	background: black;
+	text-align: center;
+}
+.nivel1{
+	background: #5b5a5a;
+	grid-column: 2 / span 1;
+	grid-row: 2/ span 1;
+	text-align: center;
+	
+}
+.nivel2{
+	grid-column: 3 / span 1;
+	grid-row: 2 / span 1;	
+	background: #898787;
+	text-align: center;
+}
+.nivel3{
+	grid-column: 4 / span 1;
+	grid-row: 2 / span 1;	
+	background: #a7adad;
+	text-align: center;	
+}
+
+.idem{	
+	text-align: center;
+	background: gray;
+}
+.tabla2 span{
+	width: 100%;
+	height:auto;
+	object-fit: cover;	
+ }
+.tabla2 span{
+	font-size: 20px;
+	color:white;
+}
+
+.tabla2{
+	display:grid;
+	grid-template-columns: repeat(7,1fr);
+	grid-template-rows: repeat(9,1fr);
+	grid-column-gap: 5px;
+	grid-row-gap: 5px; 
+	
+}
+
+.idem1{
+	background: black;
+	text-align: center;
+}
+.titulo1{
+	grid-column: 1 / span 1;
+	grid-row: 2 / span 3;	
+	background: gray;
+	text-align: center;
+}
+.titulo2{
+	grid-column: 1 / span 1;
+	grid-row: 5 / span 3;	
+	background: gray;
+	text-align: center;
+}
+.titulo3{
+	grid-column: 1 / span 1;
+	grid-row: 8 / span 3;	
+	background: gray;
+	text-align: center;
+}
+.idem2{
+	background: #5b5a5a;
+}
+.idem3{
+	background: #898787;
+}
+.idem4{
+	background: #a7adad;
+}
+
+/*animaciones*/
+.leyenda img:hover {
+   animation-duration: 0.5s;
+   animation-name: aparecer;
+}
+
+@keyframes aparecer {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+}
+/* transformaciones*/
+#contactos article div img:hover{
+    transform: translate(10px, 20px);
+
+}
+
+form{
+	color:white;
+	margin-top: 20Px;
+	margin-bottom: 10Px	
+}
+
+label{
+	margin-left: 20px;
+}
+
+input{
+	margin-left: 20px;
+}
+
+legend{
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+fieldset{
+	border:1px solid white;
+	width: auto;
+	margin:10px;
+}
+
+footer{
+	background: gray;
+	color:white;
+	height: 100px;
+	font-size:20px;
+	border: 5px solid #f7105a;
+	padding: 5px;
+}
+footer span{
+	font-weight: bold;
+	font-family: 'Dancing Script', cursive;
+}

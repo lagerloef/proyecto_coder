@@ -1,0 +1,464 @@
+/*Variables*/
+$color-base1:#43398f;
+$color-base2:#f7105a;
+$color-texto:#fff;
+$Titulo-font:bold 40px/1.5 'dancing script', cursive;
+$Titulo2-font:bold 35px/1.5 'dancing script', cursive;
+$Titulo3-font:bold 30px/1.5 'dancing script', cursive;
+$texto-font:normal 20px/1.5 'roboto', sans-serif;
+
+/*USO de MAP CSS para los colores en las tablas de horarios y tarifas*/
+$colors: (
+ curso:gray,
+ nivel1: #5b5a5a,/*RGB(91,90,90)*/
+ nivel2: #898787,/*RGB(137,135,135)*/
+ nivel3: #a7adad /*RGB(167,173,173)*/
+);
+@each $name-color, $bgcolor in $colors {
+   .btn--#{$name-color} {
+       background-color: $bgcolor;
+   }
+}
+
+/*elementos de la grilla utilizando MIXIN*/
+@mixin grilla($grid-template-columns,$grid-template-rows) {
+   display:grid;
+   grid-template-columns:$grid-template-columns;
+   grid-template-rows:$grid-template-rows; 
+   grid-column-gap: 5px;
+   grid-row-gap: 5px;
+}
+
+/*Contenedores de cada una de las partes de mi página*/
+.bloque{	
+	background:$color-base1;
+	margin: 5px;
+	border:5px solid $color-base2;
+	color:$color-texto;			
+}
+/* Especificaciones de la cabecera*/
+#original{
+	height: 100vh;
+	margin:5px;
+	border:5px solid $color-base2;
+	background-image: url("../Imagen/salsa_fondo.png");
+	background-repeat:no-repeat;
+	background-position: top;
+	background-size:cover;
+	div img{
+		padding:5px;
+	}
+	nav{
+		position: fixed; 
+		bottom:0;	
+	}
+
+	h1{
+		color:$color-base2;
+	}
+}
+
+/* Menú de Navegación*/
+
+#menu ul li{
+	background-color:$color-base2;
+	position:relative;
+ 	float:left;
+ 	margin:0;
+ 	padding:0;
+ 	a{
+ 		display:block; 		
+ 		color:#fff;
+ 		text-decoration:none;
+ 		font-weight:400;
+ 		font-size:15px;
+ 		padding:10px;
+ 		text-transform:uppercase;
+ 		letter-spacing:1px;
+ 	}
+ 	/* efecto al pasar el ratón por los items del menu */
+ 	&:hover{
+ 		background:#5b78a7;
+ 		border-radius:40px 40px 40px 40px
+ 	}
+ 	&:hover >ul{
+ 	display:block;
+	}
+}
+/* menu desplegable */
+#menu ul ul{
+	display:none;
+ 	position:absolute;
+ 	bottom:100%;
+ 	left:0;
+ 	background:#eee;
+ 	padding:0;
+ 	/* items del menu desplegable */
+ 	li{
+ 		float:none;
+ 		width:150px;
+ 		/* enlaces de los items del menu desplegable */
+ 		a{
+ 			line-height:120%;
+ 			padding:10px 15px;
+ 		}
+ 	}
+}
+
+h1{
+	font:$Titulo-font;	
+	padding: 10px;	
+}
+
+h2{
+	font: $Titulo2-font;	
+	padding: 10px;
+	display: block;
+	margin-block-start:0.83em;
+	margin-block-end:0.83em;
+	margin-inline-start:0px;
+	margin-inline-end:0px;	
+}
+
+h3{
+	font:$Titulo3-font;	
+	padding: 10px;	
+}
+
+p{	font:$texto-font;
+	color:$color-texto;
+	padding:10px;
+	margin: 5px;
+}
+
+article ul{
+	margin:50px;
+	list-style-type: square;	
+	font:$texto-font;
+	color:$color-texto;	
+}
+/*FLEXBOX para el contenido de la información de la Escuela*/
+#padre{
+	display:flex;
+	.hijo1{
+		margin-top: 5px;
+		width: 50%;	
+		border: 1px solid $color-base2;
+		margin-right: 5px;
+		margin-left: 5px;
+		border-radius:40px 10px 10px 40px;
+		p{
+			text-align: justify;
+		}
+	}
+	.hijo2{
+		width: 50%;	
+		border: 1px solid $color-base2;
+		margin-top: 5px;
+		margin-right: 5px;
+		border-radius:10px 40px 40px 10px;
+		p{
+			text-align: justify;
+		}		
+	}
+}
+.videos h2{
+	text-align:center;
+}
+.subinicio{
+	display:flex;	 
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom:25px;
+	video{
+		width:400px;
+		margin: 10px 10px 10px 0;
+		h2{
+			text-align:center;
+		}
+	}	
+}
+/*Grillas para galería de Imagenes*/
+
+.imagenes div img{
+	width: 100%;
+	height:auto;
+	object-fit: cover;
+ }
+
+ .imagenes{
+ 	margin-left:10px;
+ 	margin-right: 10px;
+ 	@include grilla(repeat(4,1fr),repeat(6,auto));
+	
+	.imagen3{
+		grid-column: 1 / span 2; 
+		grid-row: 1/span 2;
+	}
+	.imagen7{
+		grid-column: 3 / span 2; 
+		grid-row: 3/span 2;
+	}
+	.imagen15{
+		grid-column: 1 / span 2; 
+		grid-row: 5/span 2;
+	}	
+}
+/* Grillas Para la Tabla que contiene los precios del curso*/
+.tabla1{
+	margin-left:10px;
+ 	margin-right: 10px;
+	@include grilla(repeat(4,1fr),repeat(auto,1fr));
+	span{
+		width: 100%;
+		height:auto;
+		object-fit: cover;
+		font:$texto-font;		
+		text-align: center;
+	} 
+	.dif1{
+		grid-column: 1 / span 1; 
+		grid-row: 1/span 2;
+		background: black;		
+	}
+	.dif2{
+		grid-column: 2 / span 3; 
+		grid-row: 1 / span 1;
+		background: black;	
+	}
+	.nivel1{
+	
+		grid-column: 2 / span 1;
+		grid-row: 2/ span 1;
+			
+	
+	}
+	.nivel2{
+		grid-column: 3 / span 1;
+		grid-row: 2 / span 1;
+			
+		
+	}
+	.nivel3{
+		grid-column: 4 / span 1;
+		grid-row: 2 / span 1;
+		
+			
+	}
+
+	.idem{
+		background: gray;
+	}
+}
+
+/* Grillas para la Tabla que contiene los diferentes horarios del curso*/
+
+.tabla2{
+	margin-left:10px;
+ 	margin-right: 10px;
+	@include grilla(repeat(7,1fr),repeat(9,1fr));		
+	span{
+		width: 100%;
+		height:auto;
+		object-fit: cover;
+		font:$texto-font;		
+		text-align: center;
+ 	}	 
+	.idem1{
+	background: black;
+		
+	}
+	.curso1{
+		grid-column: 1 / span 1;
+		grid-row: 2 / span 3;	
+	}
+	.curso2{
+		grid-column: 1 / span 1;
+		grid-row: 5 / span 3;	
+		
+	}
+	.curso3{
+		grid-column: 1 / span 1;
+		grid-row: 8 / span 3;	
+		
+	}	
+}
+
+.leyenda{
+	margin-left:10px;
+	margin-bottom: 10px;
+	/*animacion en la leyenda*/
+	img:hover {
+   		animation-duration: 0.5s;
+   		animation-name: aparecer;
+	}
+}
+
+
+@keyframes aparecer {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+}
+
+/*Grilla en Contacto*/
+#grilla--contactos{
+	margin-left:10px; 	
+	@include grilla(repeat(2,1fr),repeat(1,auto));
+	div img{
+		max-width: 100%;		
+		max-height:100%;		
+		object-fit: cover;
+	}
+}
+/*Formato para consultar a la Escuela de Bailes*/
+form{
+	color:white;
+	margin-top: 20Px;
+	margin-bottom: 10Px;
+	fieldset{
+		border:1px solid white;
+		width: auto;
+		margin:10px;
+		form legend{
+			margin-left: 10px;
+			margin-bottom: 10px;
+		}
+		label{
+			margin-left: 20px;
+		}
+		input{
+			margin-left: 20px;
+		}
+	}	
+}
+aside ul{
+	margin:50px;
+	list-style-type: square;	
+	font:$texto-font;
+	color:$color-texto;	
+}
+footer{
+	padding-bottom:20px;	
+	.bloque-body{
+		width: 100%;		
+		display:flex;
+		justify-content: center;		
+		.cln1{
+			margin-left:20px;
+			width:33%;	
+			h2{
+				font-size: 20px;				
+			}				
+		}
+		.cln2{
+			width:33%;
+			h2{
+				font-size: 20px;
+			}
+			.fila{
+				margin-top:20px;
+				display:flex;
+				img{
+					width:36px;
+					margin-right:5px;
+				}
+				label{
+					margin-top:10px;
+					margin-left:20px;
+				}	
+			}
+
+		}
+		
+		.cln3{
+			width:33%;
+			h2{
+				font-size: 20px;
+			}			
+			.fila2{
+				margin-top:20px;
+				display:flex;
+				img{
+					width:36px;
+					margin-right:5px;
+				}
+				label{
+					margin-top:10px;
+					margin-left:20px;
+					max-width: 140px;
+				}
+
+			} 
+
+
+		}
+	}
+}
+/*página 404*/
+#hd--404{
+	margin:5px;
+	border:5px solid $color-base2;
+	background-color:$color-base1;
+	overflow:hidden;
+	flex-wrap:wrap;
+	#logo{
+		display:flex;
+		align-items: center;
+	}
+
+	div img{
+		padding:5px;
+	}
+	h1{
+		color:$color-base2;
+		font-size: 30px;
+	}
+	#menu--404{
+		list-style:none;
+  		margin:0;
+  		padding:0;
+  		border-radius:40px 40px 40px 40px;
+			
+	}
+	/* Menú de Navegación*/
+
+	ul li{
+	background-color:$color-base2;
+ 	float:left;
+ 	margin:0;
+ 	padding:0;
+ 	a{
+ 		display:block;
+ 		 color:#fff;
+  		text-decoration:none;
+  		font-weight:400;
+  		font-size:15px;
+  		padding:10px;
+  		text-transform:uppercase;
+  		letter-spacing:1px;
+ 	}
+ 	/* efecto al pasar el ratón por los items del menu */
+ 	&:hover{
+ 		background:#5b78a7;
+ 		border-radius:40px 40px 40px 40px;
+ 		}
+	}
+}
+#bloque--404{
+	display: flex;
+	justify-content: space-around;
+	padding:10px;
+	img{
+		width:100px;
+	}	
+	
+}
+
+
+
+
+	

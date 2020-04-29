@@ -1,0 +1,365 @@
+@charset "UTF-8";
+/*Variables*/
+/*USO de MAP CSS para los colores en las tablas de horarios y tarifas*/
+.btn--curso {
+  background-color: gray; }
+
+.btn--nivel1 {
+  background-color: #5b5a5a; }
+
+.btn--nivel2 {
+  background-color: #898787; }
+
+.btn--nivel3 {
+  background-color: #a7adad; }
+
+/*elementos de la grilla utilizando MIXIN*/
+/*Contenedores de cada una de las partes de mi página*/
+.bloque {
+  background: #43398f;
+  margin: 5px;
+  border: 5px solid #f7105a;
+  color: #fff; }
+
+/* Especificaciones de la cabecera*/
+#original {
+  height: 100vh;
+  margin: 5px;
+  border: 5px solid #f7105a;
+  background-image: url("../Imagen/salsa_fondo.png");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover; }
+  #original div img {
+    padding: 5px; }
+  #original nav {
+    position: fixed;
+    bottom: 0; }
+  #original h1 {
+    color: #f7105a; }
+
+/* Menú de Navegación*/
+#menu ul li {
+  background-color: #f7105a;
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  /* efecto al pasar el ratón por los items del menu */ }
+  #menu ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+  #menu ul li:hover {
+    background: #5b78a7;
+    border-radius: 40px 40px 40px 40px; }
+  #menu ul li:hover > ul {
+    display: block; }
+
+/* menu desplegable */
+#menu ul ul {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background: #eee;
+  padding: 0;
+  /* items del menu desplegable */ }
+  #menu ul ul li {
+    float: none;
+    width: 150px;
+    /* enlaces de los items del menu desplegable */ }
+    #menu ul ul li a {
+      line-height: 120%;
+      padding: 10px 15px; }
+
+h1 {
+  font: bold 40px/1.5 "dancing script", cursive;
+  padding: 10px; }
+
+h2 {
+  font: bold 35px/1.5 "dancing script", cursive;
+  padding: 10px;
+  display: block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; }
+
+h3 {
+  font: bold 30px/1.5 "dancing script", cursive;
+  padding: 10px; }
+
+p {
+  font: normal 20px/1.5 "roboto", sans-serif;
+  color: #fff;
+  padding: 10px;
+  margin: 5px; }
+
+article ul {
+  margin: 50px;
+  list-style-type: square;
+  font: normal 20px/1.5 "roboto", sans-serif;
+  color: #fff; }
+
+/*FLEXBOX para el contenido de la información de la Escuela*/
+#padre {
+  display: flex; }
+  #padre .hijo1 {
+    margin-top: 5px;
+    width: 50%;
+    border: 1px solid #f7105a;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 40px 10px 10px 40px; }
+    #padre .hijo1 p {
+      text-align: justify; }
+  #padre .hijo2 {
+    width: 50%;
+    border: 1px solid #f7105a;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 10px 40px 40px 10px; }
+    #padre .hijo2 p {
+      text-align: justify; }
+
+.videos h2 {
+  text-align: center; }
+
+.subinicio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 25px; }
+  .subinicio video {
+    width: 400px;
+    margin: 10px 10px 10px 0; }
+    .subinicio video h2 {
+      text-align: center; }
+
+/*Grillas para galería de Imagenes*/
+.imagenes div img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; }
+
+.imagenes {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, auto);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px; }
+  .imagenes .imagen3 {
+    grid-column: 1 / span 2;
+    grid-row: 1/span 2; }
+  .imagenes .imagen7 {
+    grid-column: 3 / span 2;
+    grid-row: 3/span 2; }
+  .imagenes .imagen15 {
+    grid-column: 1 / span 2;
+    grid-row: 5/span 2; }
+
+/* Grillas Para la Tabla que contiene los precios del curso*/
+.tabla1 {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px; }
+  .tabla1 span {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    font: normal 20px/1.5 "roboto", sans-serif;
+    text-align: center; }
+  .tabla1 .dif1 {
+    grid-column: 1 / span 1;
+    grid-row: 1/span 2;
+    background: black; }
+  .tabla1 .dif2 {
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 1;
+    background: black; }
+  .tabla1 .nivel1 {
+    grid-column: 2 / span 1;
+    grid-row: 2/ span 1; }
+  .tabla1 .nivel2 {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1; }
+  .tabla1 .nivel3 {
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1; }
+  .tabla1 .idem {
+    background: gray; }
+
+/* Grillas para la Tabla que contiene los diferentes horarios del curso*/
+.tabla2 {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px; }
+  .tabla2 span {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    font: normal 20px/1.5 "roboto", sans-serif;
+    text-align: center; }
+  .tabla2 .idem1 {
+    background: black; }
+  .tabla2 .curso1 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 3; }
+  .tabla2 .curso2 {
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 3; }
+  .tabla2 .curso3 {
+    grid-column: 1 / span 1;
+    grid-row: 8 / span 3; }
+
+.leyenda {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  /*animacion en la leyenda*/ }
+  .leyenda img:hover {
+    animation-duration: 0.5s;
+    animation-name: aparecer; }
+
+@keyframes aparecer {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/*Grilla en Contacto*/
+#grilla--contactos {
+  margin-left: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, auto);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px; }
+  #grilla--contactos div img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; }
+
+/*Formato para consultar a la Escuela de Bailes*/
+form {
+  color: white;
+  margin-top: 20Px;
+  margin-bottom: 10Px; }
+  form fieldset {
+    border: 1px solid white;
+    width: auto;
+    margin: 10px; }
+    form fieldset form legend {
+      margin-left: 10px;
+      margin-bottom: 10px; }
+    form fieldset label {
+      margin-left: 20px; }
+    form fieldset input {
+      margin-left: 20px; }
+
+aside ul {
+  margin: 50px;
+  list-style-type: square;
+  font: normal 20px/1.5 "roboto", sans-serif;
+  color: #fff; }
+
+footer {
+  padding-bottom: 20px; }
+  footer .bloque-body {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+    footer .bloque-body .cln1 {
+      margin-left: 20px;
+      width: 33%; }
+      footer .bloque-body .cln1 h2 {
+        font-size: 20px; }
+    footer .bloque-body .cln2 {
+      width: 33%; }
+      footer .bloque-body .cln2 h2 {
+        font-size: 20px; }
+      footer .bloque-body .cln2 .fila {
+        margin-top: 20px;
+        display: flex; }
+        footer .bloque-body .cln2 .fila img {
+          width: 36px;
+          margin-right: 5px; }
+        footer .bloque-body .cln2 .fila label {
+          margin-top: 10px;
+          margin-left: 20px; }
+    footer .bloque-body .cln3 {
+      width: 33%; }
+      footer .bloque-body .cln3 h2 {
+        font-size: 20px; }
+      footer .bloque-body .cln3 .fila2 {
+        margin-top: 20px;
+        display: flex; }
+        footer .bloque-body .cln3 .fila2 img {
+          width: 36px;
+          margin-right: 5px; }
+        footer .bloque-body .cln3 .fila2 label {
+          margin-top: 10px;
+          margin-left: 20px;
+          max-width: 140px; }
+
+/*página 404*/
+#hd--404 {
+  margin: 5px;
+  border: 5px solid #f7105a;
+  background-color: #43398f;
+  overflow: hidden;
+  flex-wrap: wrap;
+  /* Menú de Navegación*/ }
+  #hd--404 #logo {
+    display: flex;
+    align-items: center; }
+  #hd--404 div img {
+    padding: 5px; }
+  #hd--404 h1 {
+    color: #f7105a;
+    font-size: 30px; }
+  #hd--404 #menu--404 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 40px 40px 40px 40px; }
+  #hd--404 ul li {
+    background-color: #f7105a;
+    float: left;
+    margin: 0;
+    padding: 0;
+    /* efecto al pasar el ratón por los items del menu */ }
+    #hd--404 ul li a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 15px;
+      padding: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px; }
+    #hd--404 ul li:hover {
+      background: #5b78a7;
+      border-radius: 40px 40px 40px 40px; }
+
+#bloque--404 {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px; }
+  #bloque--404 img {
+    width: 100px; }
